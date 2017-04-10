@@ -1,0 +1,65 @@
+<% include include/require/header.ejs %>
+
+<h1><%= page %></h1>
+
+<div class="row">
+	<div class="col-md-8 col-sm-7 col-xs-12">
+		<table id="gameData">
+			<tr>
+				<td>Username:</td>
+				<td><input type="text" id="data-user"></td>
+			</tr>
+			<tr>
+				<td>Session ID: </td>
+				<td id="sessionID"></td>
+			</tr>
+			<tr>
+				<td>Opponent ID: </td>
+				<td><input type="text" id="opponentID"> <input type="button" id="challenge" class="btn btn-xs btn-primary" value="Issue Challenge"></td>
+			</tr>
+			<tr>
+				<td>Status: </td>
+				<td id="status">Not Playing</td>
+			</tr>
+		</table>
+		<table id="game">
+			<tr>
+				<td data-id="0:0"></td>
+				<td data-id="0:1"></td>
+				<td data-id="0:2"></td>
+			</tr>
+			<tr>
+				<td data-id="1:0"></td>
+				<td data-id="1:1"></td>
+				<td data-id="1:2"></td>
+			</tr>
+			<tr>
+				<td data-id="2:0"></td>
+				<td data-id="2:1"></td>
+				<td data-id="2:2"></td>
+			</tr>
+		</table>
+	</div>
+	<div class="col-md-4 col-sm-5 col-xs-12">
+		<div id="chat">
+			<div id="log-wrap">
+				<ul id="log-out"></ul>
+			</div>
+			<div id="msg-input">
+				<div class="input-group">
+					<input type="text" class="form-control" id="msg" placeholder="Enter message...">
+					<span class="input-group-btn">
+						<button class="btn btn-primary" id ="submit" type="button">Send</button>
+					</span>
+				</div><!-- /input-group -->
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="./js/libs/socket.io.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="./js/chat.js"></script>
+
+<% include include/require/footer.ejs %>
